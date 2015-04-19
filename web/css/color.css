@@ -1,0 +1,78 @@
+/******************/
+/*  Light Yellow  */
+/******************/
+body {
+	background: #F7F4D1;
+}
+
+.fullwidth_container {
+	background-image: -webkit-gradient(linear,right bottom,right top,color-stop(0, #F7F4D1),color-stop(1, #FBF9E8));
+	background-image: -o-linear-gradient(top, #F7F4D1 0%, #FBF9E8 100%);
+	background-image: -moz-linear-gradient(top, #F7F4D1 0%, #FBF9E8 100%);
+	background-image: -webkit-linear-gradient(top, #F7F4D1 0%, #FBF9E8 100%);
+	background-image: -ms-linear-gradient(top, #F7F4D1 0%, #FBF9E8 100%);
+	background-image: linear-gradient(to top, #F7F4D1 0%, #FBF9E8 100%);
+}
+
+.main_nav ul.nav.navbar-nav .dropdown ul li a {
+	color: #F7F4D1;	
+}
+
+/******************/
+/*  Dark yellow   */
+/******************/
+
+.fullwidth_container {
+	border-top:1px solid #F0EDCB;
+	border-bottom:1px solid #F0EDCB;
+}
+
+/******************/
+/*		Orange    */
+/******************/
+
+.main_nav ul.nav.navbar-nav > li a:focus,
+.main_nav ul.nav.navbar-nav > li a:hover {
+	color:#D48E12;		
+}
+
+.iconmedia:hover {
+	background:#D48E12;
+}
+
+/******************/
+/*	Light Brown	  */
+/******************/
+
+.main_nav ul.nav.navbar-nav > li a,
+.main_nav ul.nav.navbar-nav .dropdown ul li a:hover{
+	color: #6A523D;
+}
+
+/******************/
+/*   Dark Brown   */
+/******************/
+
+.main_nav ul.nav.navbar-nav ul.dropdown-menu {
+	background: #403C3C;
+}
+
+/******************/
+/*     Shadows    */
+/******************/
+
+.fullwidth_container {
+	box-shadow: 0px 0.5px 5px 0px #82827f;
+}
+
+.main_nav ul.nav.navbar-nav > li a:focus,
+.main_nav ul.nav.navbar-nav > li a:hover {
+	/**Gradients for Safari, Chrome, Firefox, Opera and Explorer respectively**/
+	background-image: -webkit-gradient(linear,left bottom,left top,	color-stop(0, #F0EDC1),	color-stop(1, #FDFCF7));
+	background-image: -o-linear-gradient(top, #F0EDC1 0%, #FDFCF7 100%);
+	background-image: -moz-linear-gradient(top, #F0EDC1 0%, #FDFCF7 100%);
+	background-image: -webkit-linear-gradient(top, #F0EDC1 0%, #FDFCF7 100%);
+	background-image: -ms-linear-gradient(top, #F0EDC1 0%, #FDFCF7 100%);
+	background-image: linear-gradient(to top, #F0EDC1 0%, #FDFCF7 100%);
+	box-shadow: 0px 0px 5px 0.25px #82827f;
+}

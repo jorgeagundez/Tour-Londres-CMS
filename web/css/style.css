@@ -1,0 +1,183 @@
+/******************/
+/*	  General	  */
+/******************/
+
+body {
+	display:block;
+	position:relative;
+    font-family: 'Scada', sans-serif;
+	font: normal 100%;
+	font-size:1rem;
+}
+
+ul {
+	list-style: none;
+}
+
+.fullwidth_container {
+	display:block;
+	width:100%;
+	max-width: 100%;
+}
+
+
+
+
+/******************/
+/*		Header    */
+/******************/
+
+header h1 {
+	display:none;
+}
+
+header ul {
+	position:relative;
+	display: inline-block;
+}
+
+.logo {
+	display:block;
+	margin: auto;
+}
+
+.title {
+	display:block;
+	padding-top: 40px;
+	opacity: 0.9;
+	margin:auto;
+}
+
+.social {
+	display:block;
+	margin: auto;
+	padding-top: 120px;
+}
+
+	.iconmedia {
+		display:inline-block;
+		border-radius: 50%;
+		background:transparent;
+		margin: 0 4px;
+
+	}
+		.iconmedia img {
+			width:35px;
+			height: 35px;
+			opacity: 0.8;
+		}
+
+nav.navbar.navbar-default.main_nav {
+	background: transparent;
+	border: none;
+	margin-bottom: 0;
+	min-height: 40px;
+}
+
+.main_nav ul.nav.navbar-nav {
+	border-left: 1px solid #F0EDCB;
+}
+ 
+.main_nav ul.nav.navbar-nav > li {
+	text-align: center;
+}
+	.main_nav ul.nav.navbar-nav > li a{
+		font-size:1.5em;
+		padding-top: 5px;
+		padding-bottom:5px;
+		line-height: 2em;
+		border-right: 1px solid #F0EDCB;
+	}
+
+	.main_nav ul.nav.navbar-nav ul.dropdown-menu {
+		width: 100%;
+		border-left: none;
+	}
+			.main_nav ul.nav.navbar-nav .dropdown ul li a {
+				font-size:1.1em;
+				border-right: none;
+			}
+
+			.main_nav ul.nav.navbar-nav .dropdown ul li a:hover {
+				font-size:1.1em;
+			}
+
+/******************/
+/*		Index     */
+/******************/
+
+
+
+/******************/
+/*		Footer     */
+/******************/
+
+
+footer {
+	display:block;
+	position:relative;
+	width:100%;
+	margin: 0 auto;
+	overflow:hidden;
+}
+
+.additionalinformation {
+	display:block;
+	position:relative;
+	width:100%;
+	height:40px;
+	margin:auto;
+	border-top:1px solid #F0EDCB;
+	border-bottom:1px solid #F0EDCB;
+	/**Gradients for Safari, Chrome, Firefox, Opera and Explorer respectively**/
+	background-image: -webkit-gradient(linear,right bottom,right top,color-stop(0, #F7F4D1),color-stop(1, #FBF9E8));
+	background-image: -o-linear-gradient(top, #F7F4D1 0%, #FBF9E8 100%);
+	background-image: -moz-linear-gradient(top, #F7F4D1 0%, #FBF9E8 100%);
+	background-image: -webkit-linear-gradient(top, #F7F4D1 0%, #FBF9E8 100%);
+	background-image: -ms-linear-gradient(top, #F7F4D1 0%, #FBF9E8 100%);
+	background-image: linear-gradient(to top, #F7F4D1 0%, #FBF9E8 100%);
+	box-shadow: 0px 0.5px 5px 0px #82827f;
+	overflow:hidden;
+}
+
+.additionalinformation ul {
+  float: right;
+  padding-right: 15px;
+}
+
+.additionalinformation ul li { /**button style**/
+	display:inline-block;
+	float:left;
+	text-align:right;
+	list-style:none;
+}
+
+
+.additionalinformation ul li a { /**links styles**/
+	text-decoration:none;
+	color:#6a4709;
+	line-height: 2.5;
+}
+
+footer p {
+	display:block;
+	position:relative;
+	text-align:right;
+	color:#231F1E;
+	padding:1%;
+	opacity:0.95;
+}
+
+footer p a { 
+	text-decoration:none;
+	color:#231F1E;
+}
+
+footer p a:hover { 
+	text-decoration:underline;
+	color:#231F1E;
+}
+
+#contacto {
+	opacity:0.95;
+}
