@@ -1,0 +1,169 @@
+/**************************************************************************/
+/**************************************************************************/
+/* *********************    NEW RESPONSIVE STYLES  ********************* */
+/**************************************************************************/
+/**************************************************************************/
+
+/**************************************************************/
+/* Tablet Portrait size to Base 1200px */
+/**************************************************************/
+
+@media only screen and (min-width: 996px) and (max-width: 1200px) {
+
+/* HEADER */
+
+.main_nav ul.nav.navbar-nav {
+  margin-left: 8%;
+}
+
+.main_nav ul.nav.navbar-nav > li {
+  width: auto;
+}
+
+.title {
+  padding-top: 55px;
+}
+
+.logo {
+  padding-top: 20px;
+}
+
+.social {
+  padding-top: 110px;
+}
+
+
+}
+
+
+
+
+/**************************************************************/
+/* Tablet Portrait size to Base 996px */
+/**************************************************************/
+@media only screen and (min-width: 768px) and (max-width: 995px) {
+
+/* HEADER */
+
+nav.navbar.navbar-default.main_nav {
+  min-height: 35px;
+}
+
+.main_nav ul.nav.navbar-nav > li a {
+  font-size: 13px;
+}
+
+.main_nav ul.nav.navbar-nav > li {
+  width: auto;
+}
+
+.logo { 
+  padding-top: 20px;
+}
+
+.social {
+  padding-top: 80px;
+}
+
+.iconmedia img {
+  width: 25px;
+  height: auto;
+  opacity: 0.8;
+}
+
+
+
+
+}
+
+
+/**************************************************************/
+/* Mobile Landscape Size to Tablet Portrait */
+/**************************************************************/
+@media only screen and (max-width: 767px) {
+
+
+/* HEADER */
+
+.main_nav ul.nav.navbar-nav > li {
+  width: auto;
+}
+
+.logo {
+  padding-top: 8px;
+}
+
+.title {
+  padding-top: 31px;
+}
+
+.social {
+  padding-top: 10px;
+}
+
+.iconmedia {
+  margin: 0px 5px;
+}
+
+}
+
+
+/**************************************************************/
+/* Mobile Portrait Size to Mobile Landscape Size */
+/**************************************************************/
+@media only screen and (max-width: 479px) {
+
+/* HEADER */
+
+.col-xxs-12 {
+  width: 100%;
+}
+
+.title {
+  padding-top: 0px;
+  display: block;
+  margin:auto;
+  padding-left: 27px;
+}
+
+.social {
+  padding-top: 2px;
+  padding-left: 0;
+  padding-bottom: 14px;
+}
+
+.social ul  {
+  display: table;
+  padding-left: 0;
+  margin: auto;
+}
+
+.iconmedia {
+  display: table-cell;
+}
+
+.iconmedia img {
+  width: 40px;
+  height: auto;
+}
+
+}
+
+
+
+/**************************************************************/
+/*                         EXTRAS                             */
+/**************************************************************/
+/* ipad */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+ 
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+}
+/* Largish screens ----------- */
+@media only screen and (min-width : 1500px) {
+
+}
+

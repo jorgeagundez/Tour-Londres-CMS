@@ -80,6 +80,7 @@ nav.navbar.navbar-default.main_nav {
  
 .main_nav ul.nav.navbar-nav > li {
 	text-align: center;
+	width: 170px;
 }
 	.main_nav ul.nav.navbar-nav > li a{
 		font-size:1.5em;
