@@ -1,8 +1,8 @@
 general:
-    resource: "@GeneralBundle/Controller/"
-    type:     annotation
-    prefix:   /
+    resource: "@GeneralBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}
 
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+

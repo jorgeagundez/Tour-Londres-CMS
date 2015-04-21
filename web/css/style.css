@@ -20,7 +20,13 @@ ul {
 	max-width: 100%;
 }
 
+section span{ 
+	color:#ec9e15;
+}
 
+a:hover {
+	text-decoration: none;
+}
 
 
 /******************/
@@ -104,10 +110,82 @@ nav.navbar.navbar-default.main_nav {
 			}
 
 /******************/
-/*		Index     */
+/*		Home     */
 /******************/
 
+/*  BANNER   */
+.slider, .firstinfo {
+	height:390px;
+	max-height: 390px;
+}
 
+.carousel {
+	overflow: hidden;
+	position:relative;
+}
+
+.picBanner {
+	width:100%;
+	max-width: 100%;
+	height: auto;
+}
+
+.firstinfo {
+	width: 100%;
+	position:absolute;
+	z-index: 1;
+	background-color:rgba(35, 31, 30, 0.8);
+	color:#F7F4D1;
+	padding: 80px 20px 20px 20px;
+}
+
+.firstinfo > h1 {
+	text-align:left;
+	font-size:25px;
+}
+
+.firstinfo > h2 {
+	font-size:16px;
+	font-weight:normal;
+}
+.carousel-indicators {
+	position:relative;
+}
+
+.carousel-indicators li {
+	display: inline-block;
+	opacity:0;
+	position: absolute;
+	width: 200px;
+	height: 100px;
+	top: 75px;
+	left: 0px;
+	text-indent: 0;
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	text-align: left;
+}
+
+.carousel-indicators .active {
+	margin: 0;
+	background-color: transparent;
+	width: 200px;
+	height: 100px;
+	display: inline-block;
+	opacity:1;
+	border: none;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+	.carousel-indicators .active a {
+		font-size: 18px;
+		color:#F7F4D1;
+		font-weight: 300;
+	}
 
 /******************/
 /*		Footer     */
@@ -126,7 +204,7 @@ footer {
 	display:block;
 	position:relative;
 	width:100%;
-	height:40px;
+	height:10px;
 	margin:auto;
 	border-top:1px solid #F0EDCB;
 	border-bottom:1px solid #F0EDCB;

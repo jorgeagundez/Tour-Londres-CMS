@@ -1,0 +1,3 @@
+general:
+    path: /site/{page}
+    defaults: { _controller: GeneralBundle:Site:static }
