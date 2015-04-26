@@ -19,13 +19,9 @@
        
         {% set locale = app.request.locale %}
     </head>
-    <body class="{{ template }}">
+    <body>
 
-        {% if locale == 'es' %}
-            {% include "es_header.html.twig" %}
-        {% elseif locale == 'en' %}
-            {% include "en_header.html.twig" %}
-        {% endif %}
+        <p>aqui va el header</p>
         
 
         {% block body %}{% endblock %}

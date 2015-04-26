@@ -24,8 +24,14 @@ section span{
 	color:#ec9e15;
 }
 
+p, a {
+	color: rgba(35, 31, 30, 1);
+	font-size:16px;
+}
+
 a:hover {
 	text-decoration: none;
+	color: #D48E12;
 }
 
 
@@ -187,6 +193,69 @@ nav.navbar.navbar-default.main_nav {
 		font-weight: 300;
 	}
 
+/*CONTENT*/
+
+.mainContent {
+	padding:50px 20px;
+	background-color: #231F1E;
+  opacity: 0.95;
+}
+	.mainContent p {
+		/*color: rgba(35, 31, 30, 1);*/
+		color: #F7F4D1;
+		text-align: left;
+		text-align: justify;
+		font-size: 16px;
+	}
+
+	.mainContent h1 {
+		color: #D48E12;
+  		text-align: left;
+  		text-shadow: 0px 0px 1px #808170;
+  		font-size: 32px;
+  		opacity: 1;
+  		font-family: 'Scada', sans-serif;
+  		padding-bottom: 20px;
+	}
+	 
+/*SIDEBAR*/
+
+.sidebar {
+	padding:50px 20px;
+}
+
+	.sidebar p {
+		color: rgba(35, 31, 30, 1);
+		text-align: left;
+		text-align: justify;
+		font-size: 16px;
+	}
+
+	.sidebarBlock {
+		padding:20px;
+		border-bottom: 1px solid gray;
+		position:relative;
+	}
+
+.colaborations li {
+  display: inline-block;
+}
+	.colaborations img {
+		 width: 100px;
+	  	height: auto;
+	  	min-width: 65px;
+	  	padding: 5px;
+	  	border-radius: 25px;
+	}
+	
+/******************/
+/*    Dashboard   */
+/******************/
+
+.adminNav {
+	padding: 20px;
+}
+
 /******************/
 /*		Footer     */
 /******************/
@@ -200,7 +269,7 @@ footer {
 	overflow:hidden;
 }
 
-.additionalinformation {
+.separator {
 	display:block;
 	position:relative;
 	width:100%;
@@ -219,12 +288,12 @@ footer {
 	overflow:hidden;
 }
 
-.additionalinformation ul {
+.separator ul {
   float: right;
   padding-right: 15px;
 }
 
-.additionalinformation ul li { /**button style**/
+.separator ul li { /**button style**/
 	display:inline-block;
 	float:left;
 	text-align:right;
@@ -232,7 +301,7 @@ footer {
 }
 
 
-.additionalinformation ul li a { /**links styles**/
+.separator ul li a { /**links styles**/
 	text-decoration:none;
 	color:#6a4709;
 	line-height: 2.5;
@@ -245,11 +314,13 @@ footer p {
 	color:#231F1E;
 	padding:1%;
 	opacity:0.95;
+	font-size: 9px;
 }
 
 footer p a { 
 	text-decoration:none;
 	color:#231F1E;
+	font-size: 9px;
 }
 
 footer p a:hover { 

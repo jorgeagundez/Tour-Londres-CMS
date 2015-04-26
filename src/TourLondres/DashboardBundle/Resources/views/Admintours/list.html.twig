@@ -1,0 +1,16 @@
+{% extends "::admin_base.html.twig" %}
+{% block title %}TourLondresDashboardBundle:Admintours:list{% endblock %}
+
+{% block body %}
+<h1>Lista de Tours</h1>
+
+{% for tour in tours %}
+
+	<p>{{ tour.id }}</p>
+	<br/>
+	<p>{{ tour.esname }}</p>
+	<br/><br/>
+
+{% endfor %}
+
+{% endblock %}

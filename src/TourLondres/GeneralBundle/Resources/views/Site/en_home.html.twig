@@ -1,9 +1,110 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
 
+<!-- BANNER -->
+<section class="fullwidth_container">
+	<div id="carousel-example-generic" class="carousel slider" data-ride="carousel">
 
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="firstinfo">
+						<h1><strong>THE LONDON YOU<br/> DESERVE</strong></h1>
+						<h2><em>We adjust to <span>all your needs</span></em></h2>
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"><a href="">"<em>Pre-Booked <span>Private</span><span>Private</span> for groups </em>"</a></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="2"><a href="">"<em>Oferta de Tours in offer every<span> week</span></em> "</a></li>
+							<li data-target="#carousel-example-generic" data-slide-to="3"><a href=""></a></li>
+							<li data-target="#carousel-example-generic" data-slide-to="4"><a href="">"<em><span>Transfers</span> to every airport</em> "</a></li>
+							<li data-target="#carousel-example-generic" data-slide-to="5"><a href=""></a></li>
+							<li data-target="#carousel-example-generic" data-slide-to="6"><a href="">"<em><span>Free</span>Tours and many more</em> "</a></li>
+							<li data-target="#carousel-example-generic" data-slide-to="7"><a href=""></a></li>
+							<li data-target="#carousel-example-generic" data-slide-to="8"><a href=""></a></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner itemWrap" role="listbox">
+			<div class="item active">
+				<img class="picBanner" src="{{ asset('/tourlondres-symfony/web/images/slider1.jpg') }}" alt="">
+			</div>
+			<div class="item">
+				<img class="picBanner" src="{{ asset('/tourlondres-symfony/web/images/slider2.jpg') }}" alt="">
+			</div>
+			<div class="item">
+				<img class="picBanner" src="{{ asset('/tourlondres-symfony/web/images/slider3.jpg') }}" alt="">
+			</div>
+			<div class="item">
+				<img class="picBanner" src="{{ asset('/tourlondres-symfony/web/images/slider4.jpg') }}" alt="">
+			</div>
+			<div class="item">
+				<img class="picBanner" src="{{ asset('/tourlondres-symfony/web/images/slider5.jpg') }}" alt="">
+			</div>
+			<div class="item">
+				<img class="picBanner" src="{{ asset('/tourlondres-symfony/web/images/slider6.jpg') }}" alt="">
+			</div>
+			<div class="item">
+				<img class="picBanner" src="{{ asset('/tourlondres-symfony/web/images/slider7.jpg') }}" alt="">
+			</div>
+			<div class="item">
+				<img class="picBanner" src="{{ asset('/tourlondres-symfony/web/images/slider8.jpg') }}" alt="">
+			</div>
+			<div class="item">
+				<img class="picBanner" src="{{ asset('/tourlondres-symfony/web/images/slider9.jpg') }}" alt="">
+			</div>
+		</div>
+
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div> 
+</section> <!--/container-->
+<!-- BANNER ENDS -->
+
+<div class="separator"></div>
+
+<!-- MAIN CONTENT -->
+<section class="container">
+	<div class="row">
+		<div class="col-md-8 mainContent">
+			<h1>Who we are</h1>
+			<p>Tour Londres is a new project set up by a group of young professionals from different fields, experts in the tourist sector and with years of experience in London.</p>
+		    </br>
+			<p>Our objective is to offer quality tours in Spanish, walking through the different corners of the capital of England and telling the history in a funny and entertaining way. Our experiences tell us that the best way to know London is by getting involved with the everyday’s life of the city.</p>
+			</br>
+			<p>We offer our services and adapt them to every age group and budget. Discover this amazing city with us and make the most of your stay in London.</p>
+		</div>
+		<div class="col-md-4 sidebar">
+			<div class="sidebarBlock text">
+				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+			</div>
+			<div class="sidebarBlock colaborations">
+				<ul>
+					<li><a href="http://www.zoneoneradio.com/2013/04/nuevo-show-lanuevea-armada-con-patricia.html" title="La Nueva Armada Radio" target="_blank"><img src="{{ asset('/tourlondres-symfony/web/images/nuevaarmada.jpg') }}"/></a></li>
+					<li><a href="http://www.buscoenlondres.com/" title="Busco en Londres" target="_blank"><img src="{{ asset('/tourlondres-symfony/web/images/buscoenlondres.jpg') }}"/></a></li>
+					<li><a href="http://genteventos.com/" title="Gente Eventos" target="_blank"><img src="{{ asset('/tourlondres-symfony/web/images/genteventos.png') }}"/></a></li>
+					<li><a href="http://www.elcarnavaldelacomedia.co.uk/" title="El Carnaval de la Comedia" target="_blank"><img src="{{ asset('/tourlondres-symfony/web/images/carnaval.jpg') }}"/></a></li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /MAIN CONTENT -->
 
 
 {% endblock %}
