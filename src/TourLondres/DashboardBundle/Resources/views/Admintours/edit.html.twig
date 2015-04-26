@@ -1,7 +1,80 @@
-{% extends "TourLondresDashboardBundle::layout.html.twig" %}
+{% extends "::admin_base.html.twig" %}
 
 {% block title %}TourLondresDashboardBundle:Admintours:edit{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Admintours:edit page</h1>
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{{ form_start(form, {attr:{'novalidate' : 'novalidate' }})}}
+
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Ficha Tour en Español</h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4">
+			{{ form_label(form.esname) }}
+		</div>
+		<div class="col-md-8">
+			{{ form_widget(form.esname) }}
+		</div>	
+	</div>
+
+	<div class="row">
+		<div class="col-md-4">
+			{{ form_label(form.esdescription) }}
+		</div>
+		<div class="col-md-8">
+			{{ form_widget(form.esdescription) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			{{ form_row(form.esbody) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4">
+			{{ form_label(form.type) }}
+		</div>
+		<div class="col-md-4">
+			{{ form_widget(form.type) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2">
+			{{ form_label(form.time) }}
+		</div>
+		<div class="col-md-2">
+			{{ form_widget(form.time) }}
+		</div>
+		<div class="col-md-2">
+			{{ form_label(form.esday) }}
+		</div>
+		<div class="col-md-2">
+			{{ form_widget(form.esday) }}
+		</div>
+		<div class="col-md-2">
+			{{ form_label(form.esplace) }}
+		</div>
+		<div class="col-md-2">
+			{{ form_widget(form.esplace) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Ficha Tour en Ingles</h1>
+		</div>
+	</div>
+
+
+    {{ form_row(form.submit, { 'label': 'Guardar' }) }}
+{{ form_end(form) }}
+
 {% endblock %}

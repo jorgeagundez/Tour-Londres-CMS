@@ -2,15 +2,53 @@
 {% block title %}TourLondresDashboardBundle:Admintours:list{% endblock %}
 
 {% block body %}
-<h1>Lista de Tours</h1>
 
-{% for tour in tours %}
-
-	<p>{{ tour.id }}</p>
-	<br/>
-	<p>{{ tour.esname }}</p>
-	<br/><br/>
-
-{% endfor %}
+	<div class="listWrap">
+        <div class="form-group">
+            <div class="row ">
+                <div class="col-md-12">
+                    <h3>Lista de Tours</h3>
+                </div>
+            </div>
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <div class="flash-notice">
+                    <div class="alert alert-success" role="alert">
+                        {{ flashMessage }}
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="{{ path('tourlondres_dashboard_admintours_add') }}" class="edit btn btn-default pull-right">Añadir Tour</a>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Estado</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tour in tours %}
+                        <tr>
+                            <td scope="row">{{ tour.esname }}</td>
+                            <td>{{ tour.type }}</td>
+							<td>
+								{% if tour.available %}
+									<a href="" class=" btn-xs btn btn-success">Online</a>
+								{% else %}
+									<a href="" class=" btn-xs btn btn-success">Offline</a>
+								{% endif %}
+							</td>
+                            <td><a href="{{ path('tourlondres_dashboard_admintours_edit', {'id': tour.id}) }}" class="edit btn btn-default btn-xs pull-right">Edit</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 {% endblock %}
