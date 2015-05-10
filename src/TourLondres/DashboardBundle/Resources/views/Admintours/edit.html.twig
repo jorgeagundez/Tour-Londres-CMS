@@ -4,77 +4,203 @@
 
 {% block body %}
 
-{% form_theme form 'bootstrap_3_layout.html.twig' %}
-{{ form_start(form, {attr:{'novalidate' : 'novalidate' }})}}
+<div class="editTourWrap">
 
-	<div class="row">
-		<div class="col-md-12">
-			<h1>Ficha Tour en Español</h1>
-		</div>
-	</div>
+	{% form_theme form 'bootstrap_3_layout.html.twig' %}
+	{{ form_start(form, {attr:{'novalidate' : 'novalidate' }})}}
 
-	<div class="row">
-		<div class="col-md-4">
-			{{ form_label(form.esname) }}
+		<div class="row wrap">
+			<div class="col-md-12">
+				<h1>Tipo de Tour</h1>
+			</div>
 		</div>
-		<div class="col-md-8">
-			{{ form_widget(form.esname) }}
-		</div>	
-	</div>
 
-	<div class="row">
-		<div class="col-md-4">
-			{{ form_label(form.esdescription) }}
+		<div class="row wrap">
+			<div class="col-md-3">
+				{{ form_label(form.estype) }}
+			</div>
+			<div class="col-md-3">
+				{{ form_widget(form.estype, {attr: {'class' : 'tourType'}}) }}
+			</div>
 		</div>
-		<div class="col-md-8">
-			{{ form_widget(form.esdescription) }}
-		</div>
-	</div>
 
-	<div class="row">
-		<div class="col-md-12">
-			{{ form_row(form.esbody) }}
+		<div class="row wrap">
+			<div class="col-md-3">
+				{{ form_label(form.banner) }}
+			</div>
+			<div class="col-md-3">
+				{{ form_widget(form.banner) }}
+			</div>
 		</div>
-	</div>
 
-	<div class="row">
-		<div class="col-md-4">
-			{{ form_label(form.type) }}
+		<div class="row wrap">
+			<div class="col-md-12">
+				<h1>Ficha Tour en Español</h1>
+			</div>
 		</div>
-		<div class="col-md-4">
-			{{ form_widget(form.type) }}
-		</div>
-	</div>
 
-	<div class="row">
-		<div class="col-md-2">
-			{{ form_label(form.time) }}
+		<div class="row wrap">
+			<div class="col-md-3">
+				{{ form_label(form.esname) }}
+			</div>
+			<div class="col-md-9">
+				{{ form_widget(form.esname) }}
+			</div>	
 		</div>
-		<div class="col-md-2">
-			{{ form_widget(form.time) }}
-		</div>
-		<div class="col-md-2">
-			{{ form_label(form.esday) }}
-		</div>
-		<div class="col-md-2">
-			{{ form_widget(form.esday) }}
-		</div>
-		<div class="col-md-2">
-			{{ form_label(form.esplace) }}
-		</div>
-		<div class="col-md-2">
-			{{ form_widget(form.esplace) }}
-		</div>
-	</div>
 
-	<div class="row">
-		<div class="col-md-12">
-			<h1>Ficha Tour en Ingles</h1>
+		<div class="row wrap">
+			<div class="col-md-3">
+				{{ form_label(form.esdescription) }}
+			</div>
+			<div class="col-md-9">
+				{{ form_widget(form.esdescription) }}
+			</div>
 		</div>
-	</div>
+
+		<div class="row wrap">
+			<div class="col-md-3">
+				{{ form_label(form.esnav) }}
+			</div>
+			<div class="col-md-3">
+				{{ form_widget(form.esnav) }}
+			</div>	
+		</div>
+
+		<div class="row wrap semanalDetails">
+			<div class="col-md-3">
+				{{ form_label(form.estime) }}
+			</div>
+			<div class="col-md-2">
+				{{ form_widget(form.estime) }}
+			</div>
+		</div>
+		<div class="row wrap semanalDetails">
+			<div class="col-md-3">
+				{{ form_label(form.esday) }}
+			</div>
+			<div class="col-md-4">
+				{{ form_widget(form.esday) }}
+			</div>
+		</div>
+		<div class="row wrap semanalDetails">
+			<div class="col-md-3">
+				{{ form_label(form.esplace) }}
+			</div>
+			<div class="col-md-5">
+				{{ form_widget(form.esplace) }}
+			</div>
+		</div>
+
+		<div class="row wrap">
+			<div class="col-md-12">
+				{{ form_label(form.esbody) }}
+			</div>
+	
+			<div class="col-md-12">
+				{{ form_widget(form.esbody) }}
+			</div>
+		</div>
 
 
-    {{ form_row(form.submit, { 'label': 'Guardar' }) }}
-{{ form_end(form) }}
+		<div class="row wrap">
+			<div class="col-md-12">
+				<h1>Ficha Tour en Ingles</h1>
+			</div>
+		</div>
+
+		<div class="row wrap">
+			<div class="col-md-3">
+				{{ form_label(form.enname) }}
+			</div>
+			<div class="col-md-9">
+				{{ form_widget(form.enname) }}
+			</div>	
+		</div>
+
+		<div class="row wrap">
+			<div class="col-md-3">
+				{{ form_label(form.endescription) }}
+			</div>
+			<div class="col-md-9">
+				{{ form_widget(form.endescription) }}
+			</div>
+		</div>
+
+		<div class="row wrap">
+			<div class="col-md-3">
+				{{ form_label(form.ennav) }}
+			</div>
+			<div class="col-md-3">
+				{{ form_widget(form.ennav) }}
+			</div>	
+		</div>
+
+		<div class="row wrap semanalDetails">
+			<div class="col-md-3">
+				{{ form_label(form.entime) }}
+			</div>
+			<div class="col-md-2">
+				{{ form_widget(form.entime) }}
+			</div>
+		</div>
+		<div class="row wrap semanalDetails">
+			<div class="col-md-3">
+				{{ form_label(form.enday) }}
+			</div>
+			<div class="col-md-4">
+				{{ form_widget(form.enday) }}
+			</div>
+		</div>
+		<div class="row wrap semanalDetails">
+			<div class="col-md-3">
+				{{ form_label(form.enplace) }}
+			</div>
+			<div class="col-md-5">
+				{{ form_widget(form.enplace) }}
+			</div>
+		</div>
+
+		<div class="row wrap">
+			<div class="col-md-12">
+				{{ form_label(form.enbody) }}
+			</div>
+			<div class="col-md-12">
+				{{ form_widget(form.enbody) }}
+			</div>
+		</div>
+
+		<div class="buttonGroup">
+			<a href="{{ path('tourlondres_dashboard_admintours_list') }}" class="btn btn-info pull-left">Volver</a>
+			{{ form_row(form.submit, { 'label': 'Guardar' }) }}
+		</div>
+		
+	{{ form_end(form) }}
+
+</div>
+
+<script type="text/javascript">
+    tinymce.init({
+        selector: "textarea"
+     });
+</script>
+
+<script type="text/javascript">
+	function toggleFields() {
+	    var currentTourType = $(".tourType").val();
+	    $('.semanalDetails').hide();
+	    if (currentTourType == 'ambos') {
+		 	$('.semanalDetails').show();
+		}     
+	}
+
+	$(document).ready(function () {
+
+	    toggleFields(); 
+
+	    $(".tourType").change(function () {
+	        toggleFields();
+	    });
+	});
+</script>
 
 {% endblock %}

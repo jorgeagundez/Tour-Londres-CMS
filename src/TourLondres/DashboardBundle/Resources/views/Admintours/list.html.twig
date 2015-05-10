@@ -7,9 +7,10 @@
         <div class="form-group">
             <div class="row ">
                 <div class="col-md-12">
-                    <h3>Lista de Tours</h3>
+                    <h3 class="adminTitle">Lista de Tours</h3>
                 </div>
             </div>
+
             {% for flashMessage in app.session.flashbag.get('notice') %}
                 <div class="flash-notice">
                     <div class="alert alert-success" role="alert">
@@ -17,11 +18,7 @@
                     </div>
                 </div>
             {% endfor %}
-            <div class="row">
-                <div class="col-md-12">
-                    <a href="{{ path('tourlondres_dashboard_admintours_add') }}" class="edit btn btn-default pull-right">Añadir Tour</a>
-                </div>
-            </div>
+            
             <table class="table">
                 <thead>
                     <tr>
@@ -35,20 +32,43 @@
                     {% for tour in tours %}
                         <tr>
                             <td scope="row">{{ tour.esname }}</td>
-                            <td>{{ tour.type }}</td>
+                            <td>{{ tour.estype }}</td>
 							<td>
 								{% if tour.available %}
-									<a href="" class=" btn-xs btn btn-success">Online</a>
+									<a href="{{ path('tourlondres_dashboard_admintours_available', {'id': tour.id}) }}" class="available_online btn-xs btn btn-success">Online</a>
 								{% else %}
-									<a href="" class=" btn-xs btn btn-success">Offline</a>
+									<a href="{{ path('tourlondres_dashboard_admintours_available', {'id': tour.id}) }}" class="available_offline btn-xs btn btn-danger">Offline</a>
 								{% endif %}
 							</td>
-                            <td><a href="{{ path('tourlondres_dashboard_admintours_edit', {'id': tour.id}) }}" class="edit btn btn-default btn-xs pull-right">Edit</a></td>
+                            <td><a href="{{ path('tourlondres_dashboard_admintours_edit', {'id': tour.id}) }}" class="edit btn btn-info btn-xs pull-right">Edit</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="{{ path('tourlondres_dashboard_admintours_add') }}" class="edit btn btn-primary pull-right">Añadir Tour</a>
+                </div>
+            </div>
+
         </div>
     </div>
+
+    <script>
+    
+    $('a.available_online').click(function(){
+        if (!confirm('Vas a desabilitar este Tour. No se borrará, sólo quedará oculto. Estas seguro?')) {
+            return false;
+        }
+    });
+
+    $('a.available_offline').click(function(){
+        if (!confirm('Estas seguro de que quieres publicar este tour?')) {
+            return false;
+        }
+    });
+
+    </script>
 
 {% endblock %}

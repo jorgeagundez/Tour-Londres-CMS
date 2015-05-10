@@ -85,8 +85,19 @@ nav.navbar.navbar-default.main_nav {
 
 /* HEADER */
 
+.fullwidth_container .main_nav ul.nav.navbar-nav {
+  display:block;
+  width:auto;
+}
+
+.fullwidth_container .main_nav ul.nav.navbar-nav > li {
+  width: 100%;
+ display: block;
+    float: left;
+}
+
 .main_nav ul.nav.navbar-nav > li {
-  width: auto;
+  
 }
 
 .logo {

@@ -1,0 +1,52 @@
+{% extends "::admin_base.html.twig" %}
+{% block title %}TourLondresDashboardBundle:Banner:list{% endblock %}
+
+{% block body %}
+
+	<div class="listWrap">
+        <div class="form-group">
+            <div class="row ">
+                <div class="col-md-12">
+                    <h3 class="adminTitle">Lista de Banners</h3>
+                </div>
+            </div>
+
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <div class="flash-notice">
+                    <div class="alert alert-success" role="alert">
+                        {{ flashMessage }}
+                    </div>
+                </div>
+            {% endfor %}
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for banner in banners %}
+                        <tr>
+                            <td scope="row">{{ banner.file }}</td>
+                            <td></td>
+							<td></td>
+                            <td><a href="" class="btn-xs btn btn-success pull-right">Ver</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="{{ path('tourlondres_dashboard_banner_add') }}" class="edit btn btn-primary pull-right">Añadir Banner</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

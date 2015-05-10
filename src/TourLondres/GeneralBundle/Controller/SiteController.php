@@ -11,7 +11,10 @@ class SiteController extends Controller
    
     public function staticAction($page, $_locale)
     {
-        return $this->render('GeneralBundle:Site:'. $_locale . '_' . $page .'.html.twig', array ('template' => $page));
+    	$em = $this->getDoctrine()->getEntityManager();
+    	$tours = $em->getRepository('TourLondresDashboardBundle:Tour')->findAll();
+
+        return $this->render('GeneralBundle:Site:'. $_locale . '_' . $page .'.html.twig', array('template' => $page, 'tours' => $tours));
     }
 
 }

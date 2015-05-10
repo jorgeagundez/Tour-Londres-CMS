@@ -11,11 +11,13 @@
             <link rel="stylesheet" type="text/css" media="screen" href="{{ '/tourlondres-symfony/web/css/color.css' }}"/>
             <link rel="stylesheet" type="text/css" media="screen" href="{{ '/tourlondres-symfony/web/css/responsive.css' }}"/>
         {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('/web/images/favicon.png') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('/tourlondres-symfony/web/images/favicon.png') }}" />
         <!-- jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!-- TinyEditor -->
+        <script type="text/javascript" src="{{ asset('/tourlondres-symfony/web/tinymce/tinymce.min.js') }}"></script>
     </head>
-    <body>
+    <body class="adminPanel">
 
         {% include "admin_header.html.twig" %}
 
@@ -23,12 +25,16 @@
             <div class="row">
                 <div class="col-md-3">
                     <nav class="adminNav">
+                        <h3>Administrar</h3>
                         <ul>
-                            <li><a href="{{ path('tourlondres_dashboard_admintours_list') }}">Administrar Tours</a></li>
+                            <li><a {% if toursNav is defined %} class="{{ toursNav }}" {% endif %} href="{{ path('tourlondres_dashboard_admintours_list') }}">Contenido Tours</a></li>
+                            <li><a {% if bannersNav is defined %} class="{{ bannersNav }}" {% endif %} href="{{ path('tourlondres_dashboard_banner_list') }}">Banners</a></li>
+                            <li><a {% if preciosNav is defined %} class="{{ preciosNav }}" {% endif %} href="{{ path('tourlondres_dashboard_admintours_list') }}">Precios</a></li>
+                            <li><a {% if TyCNav is defined %} class="{{ TyCNav }}" {% endif %} href="{{ path('tourlondres_dashboard_admintours_list') }}">Términos y Condiciones</a></li>
                         </ul>
                     </nav>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9 adminContent">
                     {% block body %}{% endblock %}
                 </div>
             </div>
@@ -40,5 +46,7 @@
             <!-- Controller -->
             <script src="{{ asset('/tourlondres-symfony//web/js/control.js') }}"></script>
         {% endblock %}
+
+        
     </body>
 </html>

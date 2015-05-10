@@ -2,6 +2,8 @@
 
 {% block body %}
 
+{% include "es_nav.html.twig" %}
+
 <!-- BANNER -->
 <section class="fullwidth_container">
 	<div id="carousel-example-generic" class="carousel slider" data-ride="carousel">
@@ -73,34 +75,23 @@
 </section> <!--/container-->
 <!-- BANNER ENDS -->
 
-<div class="separator"></div>
+<div class="bigSeparator"></div>
 
 <!-- MAIN CONTENT -->
-<section class="container">
+<section class="container mainContentWrap">
 	<div class="row">
-		<div class="col-md-8 mainContent">
-			<h1>Who we are</h1>
-			<p>Tour Londres is a new project set up by a group of young professionals from different fields, experts in the tourist sector and with years of experience in London.</p>
-		    </br>
-			<p>Our objective is to offer quality tours in Spanish, walking through the different corners of the capital of England and telling the history in a funny and entertaining way. Our experiences tell us that the best way to know London is by getting involved with the everyday’s life of the city.</p>
-			</br>
-			<p>We offer our services and adapt them to every age group and budget. Discover this amazing city with us and make the most of your stay in London.</p>
+		<div class="col-md-8">
+			<div class="mainContent">
+				<h1>Who we are</h1>
+				<p>Tour Londres is a new project set up by a group of young professionals from different fields, experts in the tourist sector and with years of experience in London.</p>
+			    </br>
+				<p>Our objective is to offer quality tours in Spanish, walking through the different corners of the capital of England and telling the history in a funny and entertaining way. Our experiences tell us that the best way to know London is by getting involved with the everyday’s life of the city.</p>
+				</br>
+				<p>We offer our services and adapt them to every age group and budget. Discover this amazing city with us and make the most of your stay in London.</p>
+			</div>
 		</div>
-		<div class="col-md-4 sidebar">
-			<div class="sidebarBlock text">
-				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
-				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
-				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
-			</div>
-			<div class="sidebarBlock colaborations">
-				<ul>
-					<li><a href="http://www.zoneoneradio.com/2013/04/nuevo-show-lanuevea-armada-con-patricia.html" title="La Nueva Armada Radio" target="_blank"><img src="{{ asset('/tourlondres-symfony/web/images/nuevaarmada.jpg') }}"/></a></li>
-					<li><a href="http://www.buscoenlondres.com/" title="Busco en Londres" target="_blank"><img src="{{ asset('/tourlondres-symfony/web/images/buscoenlondres.jpg') }}"/></a></li>
-					<li><a href="http://genteventos.com/" title="Gente Eventos" target="_blank"><img src="{{ asset('/tourlondres-symfony/web/images/genteventos.png') }}"/></a></li>
-					<li><a href="http://www.elcarnavaldelacomedia.co.uk/" title="El Carnaval de la Comedia" target="_blank"><img src="{{ asset('/tourlondres-symfony/web/images/carnaval.jpg') }}"/></a></li>
-				</ul>
-
-			</div>
+		<div class="col-md-4">
+			{% include "sidebar.html.twig" %}
 		</div>
 	</div>
 </section>

@@ -24,6 +24,20 @@ class Tour
     /**
      * @var string
      *
+     * @ORM\Column(name="es_nav", type="string", length=255)
+     */
+    private $esnav;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="en_nav", type="string", length=255)
+     */
+    private $ennav;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="es_name", type="string", length=255)
      */
     private $esname;
@@ -66,65 +80,73 @@ class Tour
     /**
      * @var string
      *
-     * @ORM\Column(name="icon", type="string", length=255)
+     * @ORM\Column(name="icon", type="string", length=255, nullable=true)
      */
     private $icon;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="banner", type="string", length=255)
+     * @ORM\Column(name="banner", type="string", length=255, nullable=true)
      */
     private $banner;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=255)
+     * @ORM\Column(name="es_type", type="string", length=255)
      */
-    private $type;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="time", type="string", length=45)
-     */
-    private $time;
+    private $estype;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="es_day", type="string", length=45)
+     * @ORM\Column(name="es_time", type="string", length=45, nullable=true)
+     */
+    private $estime;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="en_time", type="string", length=45, nullable=true)
+     */
+    private $entime;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="es_day", type="string", length=45, nullable=true)
      */
     private $esday;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="en_day", type="string", length=45)
+     * @ORM\Column(name="en_day", type="string", length=45, nullable=true)
      */
     private $enday;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="es_place", type="string", length=255)
+     * @ORM\Column(name="es_place", type="string", length=255, nullable=true)
      */
     private $esplace;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="en_place", type="string", length=255)
+     * @ORM\Column(name="en_place", type="string", length=255, nullable=true)
      */
     private $enplace;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="available", type="boolean")
+     * @ORM\Column(name="available", type="boolean", nullable=true)
      */
     private $available;
+
 
     /**
      * Get id
@@ -134,6 +156,52 @@ class Tour
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set esnav
+     *
+     * @param string $esnav
+     * @return Tour
+     */
+    public function setEsnav($esnav)
+    {
+        $this->esnav = $esnav;
+
+        return $this;
+    }
+
+    /**
+     * Get esnav
+     *
+     * @return string 
+     */
+    public function getEsnav()
+    {
+        return $this->esnav;
+    }
+
+    /**
+     * Set ennav
+     *
+     * @param string $ennav
+     * @return Tour
+     */
+    public function setEnnav($ennav)
+    {
+        $this->ennav = $ennav;
+
+        return $this;
+    }
+
+    /**
+     * Get ennav
+     *
+     * @return string 
+     */
+    public function getEnnav()
+    {
+        return $this->ennav;
     }
 
     /**
@@ -321,49 +389,72 @@ class Tour
     }
 
     /**
-     * Set type
+     * Set estype
      *
-     * @param string $type
+     * @param string $estype
      * @return Tour
      */
-    public function setType($type)
+    public function setEstype($estype)
     {
-        $this->type = $type;
+        $this->estype = $estype;
 
         return $this;
     }
 
     /**
-     * Get type
+     * Get estype
      *
      * @return string 
      */
-    public function getType()
+    public function getEstype()
     {
-        return $this->type;
+        return $this->estype;
     }
 
     /**
-     * Set time
+     * Set estime
      *
-     * @param \DateTime $time
+     * @param string $estime
      * @return Tour
      */
-    public function setTime($time)
+    public function setEstime($estime)
     {
-        $this->time = $time;
+        $this->estime = $estime;
 
         return $this;
     }
 
     /**
-     * Get time
+     * Get estime
      *
-     * @return \DateTime 
+     * @return string 
      */
-    public function getTime()
+    public function getEstime()
     {
-        return $this->time;
+        return $this->estime;
+    }
+
+    /**
+     * Set entime
+     *
+     * @param string $entime
+     * @return Tour
+     */
+    public function setEntime($entime)
+    {
+        $this->entime = $entime;
+
+        return $this;
+    }
+
+    /**
+     * Get entime
+     *
+     * @return string 
+     */
+    public function getEntime()
+    {
+        return $this->entime;
     }
 
     /**

@@ -9,17 +9,17 @@
         <meta name="robots" content="..." />
         <title>{% block title %}Tour Londres{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" type="text/css" media="screen" href="{{ '/tourlondres-symfony/web/bootstrap/css/bootstrap.css' }}"/>
-            <link rel="stylesheet" type="text/css" media="screen" href="{{ '/tourlondres-symfony/web/css/style.css' }}"/>
-            <link rel="stylesheet" type="text/css" media="screen" href="{{ '/tourlondres-symfony/web/css/color.css' }}"/>
-            <link rel="stylesheet" type="text/css" media="screen" href="{{ '/tourlondres-symfony/web/css/responsive.css' }}"/>
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('/tourlondres-symfony/web/bootstrap/css/bootstrap.css') }}"/>
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('/tourlondres-symfony/web/css/style.css') }}"/>
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('/tourlondres-symfony/web/css/color.css') }}"/>
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('/tourlondres-symfony/web/css/responsive.css') }}"/>
         {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('/web/images/favicon.png') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('/tourlondres-symfony/web/images/favicon.png') }}" />
         <!-- jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         {% set locale = app.request.locale %}
     </head>
-    <body class="{{ template }}">
+    <body {% if template is defined %} class="{{ template }}" {% endif %}>
 
         {% if locale == 'es' %}
             {% include "es_header.html.twig" %}

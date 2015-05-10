@@ -1,0 +1,36 @@
+{% extends "::admin_base.html.twig" %}
+
+{% block title %}TourLondresDashboardBundle:Banner:add{% endblock %}
+
+{% block body %}
+
+<div class="editTourWrap">
+
+	{% form_theme form 'bootstrap_3_layout.html.twig' %}
+	{{ form_start(form, {attr:{'novalidate' : 'novalidate' }})}}
+
+		<div class="row wrap">
+			<div class="col-md-12">
+				<h1>Añadir nombre del archivo</h1>
+			</div>
+		</div>
+
+		<div class="row wrap">
+			<div class="col-md-3">
+				{{ form_label(form.file) }}
+			</div>
+			<div class="col-md-9">
+				{{ form_widget(form.file) }}
+			</div>
+		</div>
+
+		<div class="buttonGroup">
+			<a href="{{ path('tourlondres_dashboard_banner_list') }}" class="btn btn-info pull-left">Volver</a>
+			{{ form_row(form.submit, { 'label': 'Guardar' }) }}
+		</div>
+
+	{{ form_end(form) }}
+
+</div>
+
+{% endblock %}

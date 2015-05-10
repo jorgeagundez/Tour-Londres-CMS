@@ -3,5 +3,41 @@
 {% block title %}TourLondresTourBundle:Tours:show{% endblock %}
 
 {% block body %}
-<h1>Bienvenido a Tours:show page, {{ template }}</h1>
+
+{% include "es_nav.html.twig" %}
+
+<section class="fullwidth_container tourBanner">
+	<img src="/tourlondres-symfony/web/images/{{ currentTour.banner }}"/>
+	<div class="meetingWrap">
+		<p class="meetingPoint">{{ currentTour.esname }}<br/>
+		<span class="tourtype">Tour Privado</span></p>
+	</div>
+</section>
+
+<div class="bigSeparator"></div>
+
+<!-- MAIN CONTENT -->
+<section class="container mainContentWrap">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="mainContent">
+				<h3><span>" {{ currentTour.esdescription }} "</span></h3>
+				<br/><br/>
+					{{ currentTour.esbody|raw }}
+			</div>
+		</div>
+		<div class="col-md-4">
+			{% include "sidebar.html.twig" %}
+		</div>
+	</div>
+</section>
+<!-- /MAIN CONTENT -->
+
+<script>
+
+	//Weekly Tours meeting point info
+	$('.meetingWrap').animate({width : '45%'},2500, function(){ $('.meetingPoint').fadeTo('slow',1) });
+
+</script>
+
 {% endblock %}

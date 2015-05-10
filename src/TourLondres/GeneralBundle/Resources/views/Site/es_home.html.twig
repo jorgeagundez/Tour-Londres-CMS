@@ -2,6 +2,8 @@
 
 {% block body %}
 
+{% include "es_nav.html.twig" %}
+
 <!-- BANNER -->
 <section class="fullwidth_container">
 	<div id="carousel-example-generic" class="carousel slider" data-ride="carousel">
@@ -72,34 +74,23 @@
 </section> <!--/full-width container-->
 <!-- BANNER ENDS -->
 
-<div class="separator"></div>
+<div class="bigSeparator"></div>
 
 <!-- MAIN CONTENT -->
-<section class="container">
+<section class="container mainContentWrap">
 	<div class="row">
-		<div class="col-md-8 mainContent">
-			<h1>Quienes Somos</h1>
-			<p>Tour Londres es un nuevo proyecto que ha surgido a raíz de un grupo de jóvenes profesionales de diferentes ámbitos, expertos en el sector turístico y con años de experiencia en Londres.</p>
-		    </br>
-			<p>Nuestro objetivo es ofrecer tours de calidad en español, paseando por los diferentes rincones de la capital de Inglaterra, contando la historia a través de anécdotas que permiten descubrirla de una manera divertida y amena.</p>
-			</br>
-			<p>Nuestra experiencia nos ha demostrado que la mejor forma de conocer Londres es involucrándose en la vida diaria de la ciudad. Por ello ofrecemos nuestros servicios adaptándonos a todo tipo de edades y presupuestos. Descubre esta maravillosa ciudad junto a nosotros de una forma cercana y sacándole el mayor partido posible a tu esta estancia en Londres.</p>
+		<div class="col-md-8">
+			<div class="mainContent">
+				<h1>Quienes Somos</h1>
+				<p>Tour Londres es un nuevo proyecto que ha surgido a raíz de un grupo de jóvenes profesionales de diferentes ámbitos, expertos en el sector turístico y con años de experiencia en Londres.</p>
+			    </br>
+				<p>Nuestro objetivo es ofrecer tours de calidad en español, paseando por los diferentes rincones de la capital de Inglaterra, contando la historia a través de anécdotas que permiten descubrirla de una manera divertida y amena.</p>
+				</br>
+				<p>Nuestra experiencia nos ha demostrado que la mejor forma de conocer Londres es involucrándose en la vida diaria de la ciudad. Por ello ofrecemos nuestros servicios adaptándonos a todo tipo de edades y presupuestos. Descubre esta maravillosa ciudad junto a nosotros de una forma cercana y sacándole el mayor partido posible a tu esta estancia en Londres.</p>
+			</div>
 		</div>
-		<div class="col-md-4 sidebar">
-			<div class="sidebarBlock text">
-				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
-				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
-				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
-			</div>
-			<div class="sidebarBlock colaborations">
-				<ul>
-					<li><a href="http://www.zoneoneradio.com/2013/04/nuevo-show-lanuevea-armada-con-patricia.html" title="La Nueva Armada Radio" target="_blank"><img src="{{ asset('/tourlondres-symfony/web/images/nuevaarmada.jpg') }}"/></a></li>
-					<li><a href="http://www.buscoenlondres.com/" title="Busco en Londres" target="_blank"><img src="{{ asset('/tourlondres-symfony/web/images/buscoenlondres.jpg') }}"/></a></li>
-					<li><a href="http://genteventos.com/" title="Gente Eventos" target="_blank"><img src="{{ asset('/tourlondres-symfony/web/images/genteventos.png') }}"/></a></li>
-					<li><a href="http://www.elcarnavaldelacomedia.co.uk/" title="El Carnaval de la Comedia" target="_blank"><img src="{{ asset('/tourlondres-symfony/web/images/carnaval.jpg') }}"/></a></li>
-				</ul>
-
-			</div>
+		<div class="col-md-4">
+			{% include "sidebar.html.twig" %}
 		</div>
 	</div>
 </section>
