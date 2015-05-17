@@ -6,10 +6,18 @@
 
 <div class="editTourWrap">
 
+	<div class="adminTitleWrap">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="adminTitle">Edición de <span>Tour</span></h1>
+            </div>
+        </div>
+    </div>
+
 	{% form_theme form 'bootstrap_3_layout.html.twig' %}
 	{{ form_start(form, {attr:{'novalidate' : 'novalidate' }})}}
 
-		<div class="row wrap">
+		<div class="row">
 			<div class="col-md-12">
 				<h3>Tipo de Tour</h3>
 			</div>
@@ -92,7 +100,7 @@
 		</div>
 
 		<div class="row wrap">
-			<div class="col-md-12">
+			<div class="col-md-2">
 				{{ form_label(form.esbody) }}
 			</div>
 	
@@ -188,7 +196,7 @@
 	function toggleFields() {
 	    var currentTourType = $(".tourType").val();
 	    $('.semanalDetails').hide();
-	    if (currentTourType == 'ambos') {
+	    if (currentTourType == 'semanal') {
 		 	$('.semanalDetails').show();
 		}     
 	}

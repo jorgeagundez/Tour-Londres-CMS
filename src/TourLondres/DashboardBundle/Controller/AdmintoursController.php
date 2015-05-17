@@ -45,7 +45,7 @@ class AdmintoursController extends Controller
             ->add('enbody', 'textarea', array( 'label' => 'Text' ))
             ->add('enday', 'text', array( 'label' => 'Day of the week'  ))
             ->add('enplace', 'text', array( 'label' => 'Meeting point' ))
-            ->add('estype', 'choice', array('choices' => array( 'privado' => 'Privado', 'ambos' => 'Privado y Semanal'), 'label' => 'Tipo de Tour' ))
+            ->add('estype', 'choice', array('choices' => array( 'privado' => 'Privado', 'semanal' => 'Privado y Semanal'), 'label' => 'Tipo de Tour' ))
             ->add('estime', 'text', array( 'label' => 'Hora' ))
             ->add('entime', 'text', array( 'label' => 'Time'  ))
             ->add('submit', 'submit', array('attr' => array('class' => 'btn-primary pull-right')))
@@ -91,7 +91,7 @@ class AdmintoursController extends Controller
             ->add('enbody', 'textarea', array( 'label' => 'Text' ))
             ->add('enday', 'text', array( 'label' => 'Day of the week' ))
             ->add('enplace', 'text', array( 'label' => 'Meeting point'  ))
-            ->add('estype', 'choice', array('choices' => array( 'privado' => 'Privado', 'ambos' => 'Privado y Semanal'), 'label' => 'Tipo de Tour' ))    
+            ->add('estype', 'choice', array('choices' => array( 'privado' => 'Privado', 'semanal' => 'Privado y Semanal'), 'label' => 'Tipo de Tour' ))    
             ->add('estime', 'text', array( 'label' => 'Hora' ))
             ->add('entime', 'text', array( 'label' => 'Time' ))
             ->add('submit', 'submit', array('attr' => array('class' => 'btn-primary pull-right')))
@@ -141,6 +141,28 @@ class AdmintoursController extends Controller
         $this->addFlash(
         'notice',
         '"' . $tour->getEsname() . $message . '"'
+        );
+
+        return $this->redirectToRoute('tourlondres_dashboard_admintours_list');
+
+    }
+
+    /**
+     * @Route("/admin/tour/remove/{id}")
+     * @Template()
+     * @ParamConverter("tour",  class="TourLondres\DashboardBundle\Entity\Tour")
+     */
+    public function deleteAction(Request $request, Tour $tour)
+    {
+        $name = $tour->getEsname();
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($tour);
+        $em->flush();
+
+        $this->addFlash(
+        'notice',
+        '"' . $tour->getEsname()  . ' borrado definitivamente"'
         );
 
         return $this->redirectToRoute('tourlondres_dashboard_admintours_list');

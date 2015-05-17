@@ -4,12 +4,14 @@
 {% block body %}
 
 	<div class="listWrap">
-        <div class="form-group">
-            <div class="row ">
+        <div class="adminTitleWrap">
+            <div class="row">
                 <div class="col-md-12">
-                    <h3 class="adminTitle">Lista de Banners</h3>
+                    <h1 class="adminTitle">Lista de <span>Banners</span></h1>
                 </div>
             </div>
+        </div>
+        <div class="form-group">
 
             {% for flashMessage in app.session.flashbag.get('notice') %}
                 <div class="flash-notice">

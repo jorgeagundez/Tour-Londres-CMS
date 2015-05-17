@@ -4,13 +4,15 @@
 
 {% block body %}
 
-{% include "es_nav.html.twig" %}
 
-<section class="fullwidth_container tourBanner">
+<section class="fullwidth_container banner">
 	<img src="/tourlondres-symfony/web/images/{{ currentTour.banner }}"/>
-	<div class="meetingWrap">
-		<p class="meetingPoint">{{ currentTour.esname }}<br/>
-		<span class="tourtype">Tour Privado</span></p>
+	<div class="ribbon_tour">
+		<p>{{ currentTour.esname }}<br/>
+			<span class="tourtype">
+				Tour Privado
+			</span>
+		</p>
 	</div>
 </section>
 
@@ -21,7 +23,7 @@
 	<div class="row">
 		<div class="col-md-8">
 			<div class="mainContent">
-				<h3><span>" {{ currentTour.esdescription }} "</span></h3>
+				<h3><span>"{{ currentTour.esdescription }} "</span></h3>
 				<br/><br/>
 					{{ currentTour.esbody|raw }}
 			</div>
@@ -32,11 +34,10 @@
 	</div>
 </section>
 <!-- /MAIN CONTENT -->
-
 <script>
 
 	//Weekly Tours meeting point info
-	$('.meetingWrap').animate({width : '45%'},2500, function(){ $('.meetingPoint').fadeTo('slow',1) });
+	$('.ribbon_tour').animate({width : '45%'},2500, function(){ $('.ribbon_tour p').fadeTo('slow',1) });
 
 </script>
 

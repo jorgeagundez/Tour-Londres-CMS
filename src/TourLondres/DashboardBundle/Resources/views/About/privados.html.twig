@@ -1,0 +1,41 @@
+{% extends "::admin_base.html.twig" %}
+
+{% block title %}TourLondresDashboardBundle:About:privados{% endblock %}
+
+{% block body %}
+
+<div class="edit_privados_wrap">
+
+	<div class="adminTitleWrap">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="adminTitle">En que consisten <span>Tours Privados</span></h1>
+            </div>
+        </div>
+    </div>
+
+	{% for flashMessage in app.session.flashbag.get('notice') %}
+	    <div class="flash-notice">
+	        <div class="alert alert-success" role="alert">
+	            {{ flashMessage }}
+	        </div>
+	    </div>
+	{% endfor %}
+
+	{{ form_start(form, {attr:{'novalidate' : 'novalidate' }})}}
+		{{ form_errors(form) }}
+		{{ form_row(form.estextoPrivados) }}
+		{{ form_row(form.entextoPrivados) }}
+		{{ form_row(form.submit, { 'label': 'Guardar Cambios' }) }}
+	{{ form_end(form) }}
+
+	
+
+
+
+<script type="text/javascript">
+    tinymce.init({
+        selector: "textarea"
+     });
+</script>
+{% endblock %}

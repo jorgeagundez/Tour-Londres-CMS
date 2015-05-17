@@ -3,5 +3,64 @@
 {% block title %}TourLondresTourBundle:Tours:list{% endblock %}
 
 {% block body %}
-<h1>Bienvenido a Tours:list page</h1>
+
+<section class="fullwidth_container banner">
+	<img src="/tourlondres-symfony/web/images/about.jpg"/>
+	<div class="ribbon_tour">
+		<p>En qué consisten<br/>
+			<span class="tourtype">
+				Tours Privados
+			</span>
+		</p>
+	</div>
+</section>
+
+<div class="bigSeparator"></div>
+
+<!-- MAIN CONTENT -->
+<section class="container mainContentWrap">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="mainContent">
+				{% for ab in about %}
+					{{ ab.estextoPrivados|raw }}
+					<br/>
+				{% endfor %}
+				<h3>Nuestros Tours <span>Privados</span></h3>
+
+				<div class="tour_list">
+					{% for tour in tours %}
+						{% if tour.available == true %}
+							<div class="tour">
+								<div class="row">
+									<div class="col-md-3">
+										<div class="small_banner_wrap">
+											<img src="/tourlondres-symfony/web/images/{{ tour.banner }}"/>
+										</div>
+									</div>
+									<div class="col-md-9">
+										<h3>{{ tour.esname }}</h3>
+										<p>{{ tour.esdescription }}</p>
+										<a href="{{ path('tourlondres_tour_tours_privateshow', {'id': tour.id}) }}"><span>Ver más</span></a>
+									</div>
+								</div>
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+				
+			</div>
+		</div>
+		<div class="col-md-4">
+			{% include "sidebar.html.twig" %}
+		</div>
+	</div>
+</section>
+<!-- /MAIN CONTENT -->
+<script>
+
+	//Weekly Tours meeting point info
+	$('.ribbon_tour').animate({width : '45%'},2500, function(){ $('.ribbon_tour p').fadeTo('slow',1) });
+
+</script>
 {% endblock %}

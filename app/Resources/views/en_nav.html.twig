@@ -18,12 +18,12 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><strong>Private Tours</strong><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">En que consisten</a></li>
-                <li><a href="#">Precios</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="{{ path('tourlondres_tour_price_show') }}">Prices</a></li>
                 <li class="divider"></li>
-                {% for tour in tours %}
+               {% for tour in tours %}
                   {% if tour.available == true %}
-                    <li><a href="#">{{ tour.ennav }}</a></li>
+                    <li><a href="{{ path('tourlondres_tour_tours_privateshow', {'id': tour.id}) }}">{{ tour.ennav }}</a></li>
                   {% endif %}
                 {% endfor %}
               </ul>
@@ -31,18 +31,21 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><strong>Weekly Tours</strong><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">En que consisten</a></li>
-                <li><a href="#">Precios</a></li>
+                <li><a href="#">About</a></li>
                 <li class="divider"></li>
-                <li><a href="#"></a></li>
+                {% for tour in tours %}
+                  {% if tour.available == true and tour.estype == 'semanal' %}
+                    <li><a href="{{ path('tourlondres_tour_tours_semanalshow', {'id': tour.id}) }}">{{ tour.ennav }}</a></li>
+                  {% endif %}
+                {% endfor %}
               </ul>
             </li>
-            <li class=""><a href="#"><strong>Tours Gratis</strong></a></li>
+            <li class=""><a href="#"><strong>Free Tours</strong></a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><strong>Transfers</strong><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">En que consisten</a></li>
-                <li><a href="#">Precios</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Prices</a></li>
               </ul>
             </li>
             <li class=""><a href="#"><strong>Contact</strong></a></li>

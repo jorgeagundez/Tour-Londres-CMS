@@ -1,0 +1,160 @@
+{% extends "::admin_base.html.twig" %}
+{% block title %}TourLondresDashboardBundle:Admintours:list{% endblock %}
+
+{% block body %}
+
+<div class="editPreciosWrap">
+
+	<div class="adminTitleWrap">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="adminTitle">Precios Tours <span>Privados</span></h1>
+            </div>
+        </div>
+    </div>
+
+	{% for flashMessage in app.session.flashbag.get('notice') %}
+	    <div class="flash-notice">
+	        <div class="alert alert-success" role="alert">
+	            {{ flashMessage }}
+	        </div>
+	    </div>
+	{% endfor %}
+
+	<h2>Español:</h2>
+
+	{# <table class="table">
+	 	<thead>
+	    	<tr>
+	     		<th>{{ precios.esaa }}</th>
+	      		<th>{{ precios.esab }}</th>
+	    	</tr>
+	  	</thead>
+	  	<tbody>
+	    	<tr>
+	      		<td>{{ precios.esba }}</td>
+	      		<td>{{ precios.esbb }}</td>
+	    	</tr>
+	    	<tr>
+	      		<td>{{ precios.esca }}</td>
+	      		<td>{{ precios.escb }}</td>
+	    	</tr>
+	    	<tr>
+	      		<td>{{ precios.esda }}</td>
+	      		<td>{{ precios.esdb }}</td>
+	    	</tr>
+	    	<tr>
+	      		<td>{{ precios.esea }}</td>
+	      		<td>{{ precios.eseb }}</td>
+	    	</tr>
+	  	</tbody>
+	</table> #}
+
+	{{ form_start(form, {attr:{'novalidate' : 'novalidate' }})}}
+		<table class=" precios_tour">
+			{{ form_errors(form) }}
+		 	<thead>
+		    	<tr>
+		     		<th><b>{{ form_row(form.esaa) }}</b></th>
+		      		<th><b>{{ form_row(form.esab) }}</b></th>
+		    	</tr>
+		  	</thead>
+		  	<tbody>
+		    	<tr>
+		      		<td>{{ form_row(form.esba) }}</td>
+		      		<td>{{ form_row(form.esbb) }}</td>
+		    	</tr>
+		    	<tr>
+		      		<td>{{ form_row(form.esca) }}</td>
+		      		<td>{{ form_row(form.escb) }}</td>
+		    	</tr>
+		    	<tr>
+		      		<td>{{ form_row(form.esda) }}</td>
+		      		<td>{{ form_row(form.esdb) }}</td>
+		    	</tr>
+		    	<tr>
+		      		<td>{{ form_row(form.esea) }}</td>
+		      		<td>{{ form_row(form.eseb) }}</td>
+		    	</tr>
+		  	</tbody>
+		</table>
+		<div class="row wrap">
+			<div class="col-md-12">
+				{{ form_row(form.esbody) }}
+			</div>
+		</div>
+
+	<h2>Inglés</h2>
+
+	{# <table class="table">
+	 	<thead>
+	    	<tr>
+	     		<th>{{ precios.enaa }}</th>
+	      		<th>{{ precios.enab }}</th>
+	    	</tr>
+	  	</thead>
+	  	<tbody>
+	    	<tr>
+	      		<td>{{ precios.enba }}</td>
+	      		<td>{{ precios.enbb }}</td>
+	    	</tr>
+	    	<tr>
+	      		<td>{{ precios.enca }}</td>
+	      		<td>{{ precios.encb }}</td>
+	    	</tr>
+	    	<tr>
+	      		<td>{{ precios.enda }}</td>
+	      		<td>{{ precios.endb }}</td>
+	    	</tr>
+	    	<tr>
+	      		<td>{{ precios.enea }}</td>
+	      		<td>{{ precios.eneb }}</td>
+	    	</tr>
+	  	</tbody>
+	</table> #}
+
+		<table class=" precios_tour">
+		 	<thead>
+		    	<tr>
+		     		<th><b>{{ form_row(form.enaa) }}</b></th>
+		      		<th><b>{{ form_row(form.enab) }}</b></th>
+		    	</tr>
+		  	</thead>
+		  	<tbody>
+		    	<tr>
+		      		<td>{{ form_row(form.enba) }}</td>
+		      		<td>{{ form_row(form.enbb) }}</td>
+		    	</tr>
+		    	<tr>
+		      		<td>{{ form_row(form.enca) }}</td>
+		      		<td>{{ form_row(form.encb) }}</td>
+		    	</tr>
+		    	<tr>
+		      		<td>{{ form_row(form.enda) }}</td>
+		      		<td>{{ form_row(form.endb) }}</td>
+		    	</tr>
+		    	<tr>
+		      		<td>{{ form_row(form.enea) }}</td>
+		      		<td>{{ form_row(form.eneb) }}</td>
+		    	</tr>
+		  	</tbody>
+		</table>
+		<div class="row wrap">
+			<div class="col-md-12">
+				{{ form_row(form.enbody) }}
+			</div>
+		</div>
+
+	{{ form_end(form) }}
+
+</div>
+
+
+
+<script type="text/javascript">
+    tinymce.init({
+        selector: "textarea"
+     });
+</script>
+
+{% endblock %}

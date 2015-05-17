@@ -1,0 +1,70 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}TourLondresTourBundle:Price:show{% endblock %}
+
+{% block body %}
+
+<section class="fullwidth_container banner">
+	<img src="/tourlondres-symfony/web/images/prices.jpg"/>
+	<div class="ribbon_tour">
+		<p>Tabla de Precios<br/>
+			<span class="tourtype">
+				Tours Privados
+			</span>
+		</p>
+	</div>
+</section>
+
+<div class="bigSeparator"></div>
+
+<!-- MAIN CONTENT -->
+<section class="container mainContentWrap">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="mainContent">
+				<h3>Nuestras tarifas: </h3>
+				{% for pri in prices %}
+					<table>
+					 	<thead>
+					    	<tr>
+					     		<th>{{ pri.esaa }}</th>
+					      		<th>{{ pri.esab }}</th>
+					    	</tr>
+					  	</thead>
+					  	<tbody>
+					    	<tr>
+					      		<td>{{ pri.esba }}</td>
+					      		<td>{{ pri.esbb }}</td>
+					    	</tr>
+					    	<tr>
+					      		<td>{{ pri.esca }}</td>
+					      		<td>{{ pri.escb }}</td>
+					    	</tr>
+					    	<tr>
+					      		<td>{{ pri.esda }}</td>
+					      		<td>{{ pri.esdb }}</td>
+					    	</tr>
+					    	<tr>
+					      		<td>{{ pri.esea }}</td>
+					      		<td>{{ pri.eseb }}</td>
+					    	</tr>
+					  	</tbody>
+					</table>
+					{{ pri.esbody|raw }}
+				{% endfor %}
+			</div>
+		</div>
+		<div class="col-md-4">
+			{% include "sidebar.html.twig" %}
+		</div>
+	</div>
+</section>
+<!-- /MAIN CONTENT -->
+<script>
+
+	//Weekly Tours meeting point info
+	$('.ribbon_tour').animate({width : '45%'},2500, function(){ $('.ribbon_tour p').fadeTo('slow',1) });
+
+</script>
+
+{% endblock %}

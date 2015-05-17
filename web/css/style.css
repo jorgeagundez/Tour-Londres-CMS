@@ -1,5 +1,7 @@
 /******************/
+/******************/
 /*	  General	  */
+/******************/
 /******************/
 
 body {
@@ -43,7 +45,9 @@ a:hover {
 }
 
 /**********************/
+/**********************/
 /*  Common Elemnts    */
+/**********************/
 /**********************/
 
 .separator {
@@ -84,6 +88,20 @@ a:hover {
 	overflow:hidden;
 }
 
+/*BANNER*/
+
+.banner {
+	height: 390px;
+	position: relative;
+}
+
+.banner img {
+	width:100%;
+	height: 100%;
+	max-width: 100%;
+	float:left;
+}
+
 /*CONTENT*/
 
 .mainContentWrap {
@@ -96,24 +114,53 @@ a:hover {
 }
 	.mainContent p {
 		/*color: rgba(35, 31, 30, 1);*/
-		color: #F7F4D1;
 		text-align: left;
-		/*text-align: justify;*/
 		font-size: 16px;
 	}
 
-	.mainContent p strong {
+	.mainContent strong {
 		color:#ec9e15;
 	}
 
+	.mainContent p,
+	.mainContent h1,
+	.mainContent h2, 
+	.mainContent h3,
+	.mainContent table td,
+	.mainContent table th{
+		color: #F7F4D1;
+	}
+
 	.mainContent h1 {
-		color: #D48E12;
   		text-align: left;
   		text-shadow: 0px 0px 1px #808170;
   		font-size: 32px;
   		opacity: 1;
   		font-family: 'Scada', sans-serif;
   		padding-bottom: 20px;
+	}
+
+	.mainContent table {
+  		text-shadow: 0px 0px 35px #000000;
+  		margin: auto;
+  		height: auto;
+  		width: 100%;
+  		display: table;
+		border-collapse: separate;
+		border-spacing: 2px;
+		border-color: gray;
+		margin: 20px 0 30px 0;
+	}
+	.mainContent table td, 
+	.mainContent table th {
+		text-align: center;
+		font-size: 16px;
+  		background-color: #433b39;
+  		padding: 5px;
+	}
+
+	.mainContent table th {
+		font-size: 18px;
 	}
 
 /*SIDEBAR*/
@@ -148,7 +195,9 @@ a:hover {
 	}
 
 /******************/
+/******************/
 /*		Header    */
+/******************/
 /******************/
 
 header h1 {
@@ -199,7 +248,6 @@ nav.navbar.navbar-default.main_nav {
 }
 
 .main_nav ul.nav.navbar-nav {
-	border-left: 1px solid #F0EDCB;
 	display:table;
 	width:100%;
 }
@@ -210,12 +258,16 @@ nav.navbar.navbar-default.main_nav {
 	display: table-cell;
   	float: none;
 }
-	.main_nav ul.nav.navbar-nav > li a{
+	.main_nav ul.nav.navbar-nav > li a {
 		font-size:1.5em;
 		padding-top: 5px;
 		padding-bottom:5px;
 		line-height: 2em;
 		border-right: 1px solid #F0EDCB;
+	}
+
+	.main_nav ul.nav.navbar-nav > li > a:first-child {
+		border-left: 1px solid #F0EDCB;
 	}
 
 	.main_nav ul.nav.navbar-nav ul.dropdown-menu {
@@ -232,7 +284,9 @@ nav.navbar.navbar-default.main_nav {
 			}
 
 /******************/
+/******************/
 /*		Home     */
+/******************/
 /******************/
 
 /*  BANNER   */
@@ -312,24 +366,36 @@ nav.navbar.navbar-default.main_nav {
 
 
 /**********************/
+/**********************/
 /*    Tour Template   */
 /*********************/
+/**********************/
+.tour_list{
+	margin-top: 25px;
+}
 
-.tourBanner {
-	height: 390px;
+.tour {
+	border-top: 1px solid #4e4b4a;
+	padding: 20px 0;
+}
+
+.small_banner_wrap {
+	width: 150px;
+	height: 150px;
+	border-radius: 10px;
+	overflow: hidden;
 	position: relative;
 }
 
-.tourBanner img {
-	width:100%;
-	height: 100%;
-	max-width: 100%;
-	float:left;
+.small_banner_wrap img {
+	width: 350%;
+	position: absolute;
+	left: -90px;
 }
 
-/*meeting point*/
+/* ribbon tour */
 
-.meetingWrap {
+.ribbon_tour {
 	position:absolute;
 	top: 70%;
 	width: 0;
@@ -339,7 +405,7 @@ nav.navbar.navbar-default.main_nav {
 	max-height: 90px;
 }
 
-	.meetingPoint {
+	.ribbon_tour p {
 		color: white;
 		opacity: 0;
 		padding-top: 18px;
@@ -357,50 +423,41 @@ nav.navbar.navbar-default.main_nav {
 			font-size:16px;
 		}
 
-	
+
+
+/*private tours*/
+
+/*semanal tours*/
+
+.meeting {
+  background: #383534;
+  padding: 15px 15px 5px 15px;
+  border-radius: 10px;
+  margin-bottom: 35px;
+}
+	.meeting p {
+		font-size: 20px;
+	}
+
+
+
+/******************/
 /******************/
 /*    Dashboard   */
 /******************/
+/******************/
+
+body.adminPanel {
+	background: #F7F4D1;
+}
 
 .adminPanel span { 
 	color: #ec9e15;
 }
 
 .adminPanel .adminTitle {
-	padding-bottom: 20px;
+
 }
-
-/*HEADER*/
-
-.adminHeader .logo {
-	width: 100px;
-}
-
-.adminHeader h1 {
-	display: block;
-	padding-top: 20px;
-	text-transform: capitalize;
-	color: black;
-}
-
-.adminHeader span {
-	color:#ec9e15;
-}
-
-/*NAV*/
-
-.adminNav {
-	/*padding: 20px;
-	margin-top: 50px;*/
-}
-
-.adminNav ul {
-	padding-left: 0;
-	list-style: none;
-}
-	.adminNav ul li a.active {
-		color:#ec9e15;
-	}
 
 /*GENERAL CONTENT*/
 
@@ -416,26 +473,151 @@ nav.navbar.navbar-default.main_nav {
   border-width: 1px;
 }
 
+.adminPanel .logo {
+	width:100%;
+}
+
+.adminPanel .logo img {
+	display:block;
+	margin: 0 auto 50px;
+}
+
+/*SIDEBAR*/
+
+.adminPanel .admin_menu {
+	display: inline-block;
+	float: left;
+	width: 20%;
+	background: #231F1E;
+	position:fixed;
+	color: #F7F4D1;
+	border-right: 1px solid #4e4b4a;
+	text-align: center;
+}
+
+
+	.admin_menu ul {
+		padding-top: 30px;
+		padding-left: 0;
+		list-style: none;
+		margin: 0;
+  		border-bottom: 1px solid #4e4b4a;
+  		display: table;
+  		width: 100%;
+	}
+
+	.admin_menu ul li {
+		border-top: 1px solid #4e4b4a;
+		
+		position:relative;
+		display: block;
+
+	}
+
+	.admin_menu ul li a {
+		padding: 10px;
+		display: block;
+		width: 100%;
+		color: #F7F4D1;
+		text-align: left;
+		padding-left: 50px;
+	}
+
+	.admin_menu ul li a:hover {
+		background: #383534;
+		color:#ec9e15;
+	}
+		.admin_menu ul li.current a{
+			color:#ec9e15;
+			background: #383534;
+		}
+
+
+/*MAIN*/
+
+.adminPanel .admin_main {
+	display: inline-block;
+	float: right;
+	width: 80%;
+	padding: 0 30px;
+	position: relative;
+	padding-top: 100px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.adminTitleWrap {
+	color: #F7F4D1;
+	position: absolute;
+	left: 0;
+	top:0;
+	
+}
+
+h1.adminTitle {
+	padding-top: 25px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #4e4b4a;
+	width:100%;
+	position:fixed;
+	padding-left: 30px;
+	background: #383534;
+	margin-top:0;
+	z-index:1;
+
+}
+
 
 /*TOURS*/
 /*Edit*/
 
 .editTourWrap .wrap {
-	padding: 10px;
+	padding: 2px;
 }
 
 .editTourWrap label {
 	font-weight: 300;
+	float:right;
 }
 
 .editTourWrap textarea {
-	height: 500px;
+	height: 300px;
 }
 
+/*List*/
+.delete span {
+	color: black;
+}
 
+/*PRECIOS TOUR*/
+
+.editPreciosWrap textarea {
+	height: 300px;
+}
+
+.precios_tour label {
+	display: none;
+}
+
+.editar {
+	margin-bottom: 50px;
+}
+
+/* TOURS PRIVADOS */
+.edit_privados_wrap textarea{
+	height: 150px;
+}
+/* TOUR SEMANALES */
+.edit_semanales_wrap textarea{
+	height: 150px;
+}
+
+/* TRASLADOS */
 
 /******************/
-/*		Footer     */
+/******************/
+/*	Footer     */
+/******************/
 /******************/
 
 

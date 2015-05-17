@@ -4,13 +4,14 @@
 {% block body %}
 
 	<div class="listWrap">
-        <div class="form-group">
-            <div class="row ">
+        <div class="adminTitleWrap">
+            <div class="row">
                 <div class="col-md-12">
-                    <h3 class="adminTitle">Lista de Tours</h3>
+                    <h1 class="adminTitle">Lista de <span>Tours</span></h1>
                 </div>
             </div>
-
+        </div>
+        <div class="form-group">
             {% for flashMessage in app.session.flashbag.get('notice') %}
                 <div class="flash-notice">
                     <div class="alert alert-success" role="alert">
@@ -40,20 +41,27 @@
 									<a href="{{ path('tourlondres_dashboard_admintours_available', {'id': tour.id}) }}" class="available_offline btn-xs btn btn-danger">Offline</a>
 								{% endif %}
 							</td>
-                            <td><a href="{{ path('tourlondres_dashboard_admintours_edit', {'id': tour.id}) }}" class="edit btn btn-info btn-xs pull-right">Edit</a></td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                  <a href="{{ path('tourlondres_dashboard_admintours_edit', {'id': tour.id}) }}" class="edit btn btn-default btn-xs ">EDIT</a>
+                                  <a type="button" href="{{ path('tourlondres_dashboard_admintours_delete', {'id': tour.id}) }}" class="edit btn btn-default btn-xs delete" data-toggle="tooltip" data-placement="right" title="Borrar Tour"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                </div>
+                                
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-11">
                     <a href="{{ path('tourlondres_dashboard_admintours_add') }}" class="edit btn btn-primary pull-right">Añadir Tour</a>
                 </div>
             </div>
 
         </div>
     </div>
+
 
     <script>
     
@@ -65,6 +73,12 @@
 
     $('a.available_offline').click(function(){
         if (!confirm('Estas seguro de que quieres publicar este tour?')) {
+            return false;
+        }
+    });
+
+    $('a.delete').click(function(){
+        if (!confirm('Este Tour será borrado de la base de datos de forma permanente. Si lo prefiere, puede desactivarlo presionando el botton de Estado. Desea borrar el tour?')) {
             return false;
         }
     });

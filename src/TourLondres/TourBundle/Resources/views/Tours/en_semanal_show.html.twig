@@ -1,0 +1,49 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}TourLondresTourBundle:Tours:show{% endblock %}
+
+{% block body %}
+
+<section class="fullwidth_container banner">
+	<img src="/tourlondres-symfony/web/images/{{ currentTour.banner }}"/>
+	<div class="ribbon_tour">
+		<p>{{ currentTour.enname }}<br/>
+			<span class="tourtype">
+				Weekly Tour
+			</span>
+		</p>
+	</div>
+</section>
+
+<div class="bigSeparator"></div>
+
+<!-- MAIN CONTENT --> 
+<section class="container mainContentWrap">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="mainContent">
+				{% if currentTour.enday is defined and currentTour.entime is defined and currentTour.enplace is defined %}
+					<div class="meeting">
+						<p>{{ currentTour.enday }}<span> {{ currentTour.entime }}</span></p>
+						<p>{{ currentTour.enplace }}</p>
+					</div>
+				{% endif %}
+				<h3><span>"{{ currentTour.endescription }} "</span></h3>
+				<br/><br/>
+					{{ currentTour.enbody|raw }}
+			</div>
+		</div>
+		<div class="col-md-4">
+			{% include "sidebar.html.twig" %}
+		</div>
+	</div>
+</section>
+<!-- /MAIN CONTENT -->
+<script>
+
+	//Weekly Tours meeting point info
+	$('.ribbon_tour').animate({width : '45%'},2500, function(){ $('.ribbon_tour p').fadeTo('slow',1) });
+
+</script>
+
+{% endblock %}

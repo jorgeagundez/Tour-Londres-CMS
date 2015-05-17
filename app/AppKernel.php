@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new TourLondres\GeneralBundle\GeneralBundle(),
             new TourLondres\TourBundle\TourLondresTourBundle(),
             new TourLondres\DashboardBundle\TourLondresDashboardBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
